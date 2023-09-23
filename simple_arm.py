@@ -20,6 +20,7 @@ for i in range(p.getNumJoints(object)):
 
 for step in range(300):
     pos, _ = p.getBasePositionAndOrientation(object)
+    # to create a static camera
     p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=3, cameraPitch=-70, cameraTargetPosition=pos)
     p.stepSimulation()
     time.sleep(.01)

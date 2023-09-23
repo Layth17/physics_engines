@@ -15,11 +15,12 @@ p.setRealTimeSimulation(0) # r-t simulation
 p.loadURDF(fileName="plane.urdf", basePosition=[0,0,0], baseOrientation=[0,0,0,1])
 object = p.loadURDF(fileName="franka_panda/panda.urdf", basePosition=[0,0,0], baseOrientation=[0,0,0,1], useFixedBase=True)
 
+# for all joints of this object, print info
 for i in range(p.getNumJoints(object)):
     print(p.getJointInfo(object, i))
 
 for step in range(300):
-    pos, _ = p.getBasePositionAndOrientation(object)
+    pos, ori = p.getBasePositionAndOrientation(object)
     # to create a static camera
     p.resetDebugVisualizerCamera(cameraDistance=3, cameraYaw=3, cameraPitch=-70, cameraTargetPosition=pos)
     p.stepSimulation()

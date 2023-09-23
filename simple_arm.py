@@ -18,23 +18,6 @@ object = p.loadURDF(fileName="franka_panda/panda.urdf", basePosition=[0,0,0], ba
 # for all joints of this object, print info
 # but what do the values mean?
 # https://github.com/bulletphysics/bullet3/blob/master/examples/pybullet/notebooks/HelloPyBullet.ipynb
-# index: int
-# name: str
-# type: int
-# gIndex: int
-# uIndex: int
-# flags: int
-# damping: float
-# friction: float
-# lowerLimit: float
-# upperLimit: float
-# maxForce: float
-# maxVelocity: float
-# linkName: str
-# axis: tuple
-# parentFramePosition: tuple
-# parentFrameOrientation: tuple
-# parentIndex: int
 for i in range(p.getNumJoints(object)):
     print(p.getJointInfo(object, i))
 
